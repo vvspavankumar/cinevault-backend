@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 CineVault Premium</title>
+
+    <link rel="icon" type="image/svg+xml" 
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="moviereview.css">
+</head>
+
+<body>
+
+<!-- ================= PREMIUM NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+        <h1 class="logo">🎬 CineVault</h1>
+    </div>
+
+    <div class="nav-center">
+
+        <!-- SEARCH -->
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search movies..." required>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+
+        <!-- CATEGORY BAR -->
+        <div class="category-bar">
+            <button class="cat-btn active" onclick="filterCategory('movie', event)">All</button>
+<button class="cat-btn" onclick="filterCategory('action', event)">Action</button>
+<button class="cat-btn" onclick="filterCategory('comedy', event)">Comedy</button>
+<button class="cat-btn" onclick="filterCategory('drama', event)">Drama</button>
+<button class="cat-btn" onclick="filterCategory('horror', event)">Horror</button>
+<button class="cat-btn" onclick="filterCategory('animation', event)">Animation</button>
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+        <a href="login.html" class="primary-btn">Login</a>
+    </div>
+
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-section">
+    <div class="hero-content">
+        <h2>Unlimited Movies. Reviews. Entertainment.</h2>
+        <p>Discover trending films, rate them, and explore cinematic masterpieces.</p>
+    </div>
+</section>
+
+<!-- ================= MAIN CONTENT ================= -->
+
+<main class="container">
+
+    <div class="section-header">
+        <h2 id="section-title">🔥 Trending Now</h2>
+    </div>
+
+    <div id="loader" class="loader"></div>
+
+    <div class="movie-grid" id="movie-grid">
+        <p class="loading-message">Loading cinematic treasures...</p>
+    </div>
+
+</main>
+
+<!-- ================= REVIEW PANEL ================= -->
+
+<div id="overlay-blur" class="overlay-blur"></div>
+
+<div id="review-panel" class="review-panel">
+    <div class="drag-bar"></div>
+
+    <div class="review-header">
+        <h2 id="movie-title"></h2>
+        <span id="close-panel" class="close-btn">✕</span>
+    </div>
+
+    <div id="review-content" class="review-body"></div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+    <p>© 2025 CineVault Premium | Powered by OMDB API</p>
+</footer>
+
+<script src="moviereview.js"></script>
+</body>
+</html>
