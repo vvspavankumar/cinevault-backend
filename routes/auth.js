@@ -20,13 +20,10 @@ router.post("/register", async (req, res) => {
             "INSERT INTO users (username, password) VALUES (?, ?)",
             [username, hashedPassword],
             (err) => {
-                if (err) {
-                    if (err.code === "ER_DUP_ENTRY") {
-                        return res.status(400).json({ message: "Username already exists" });
-                    }
-                    return res.status(500).json({ message: "Database error" });
-                }
-
+              if (err) {
+    console.error("REGISTER ERROR:", err);
+    return res.status(500).json({ message: err.message });
+}
                 res.json({ message: "User registered successfully" });
             }
         );
