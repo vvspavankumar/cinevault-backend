@@ -20,14 +20,14 @@ app.use("/api", authRoutes);
 app.use("/api", movieRoutes);
 
 // ✅ Home route
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-});
-app.get("/", (req, res) => {
-  res.send("API is running");
-});
+// ✅ API test route
 app.get("/api", (req, res) => {
     res.json({ message: "CineVault API is running 🚀" });
+});
+
+// ✅ Home route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
