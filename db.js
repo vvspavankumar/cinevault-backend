@@ -15,5 +15,22 @@ db.connect((err) => {
         console.log("✅ Connected to Railway MySQL");
     }
 });
+db.connect((err) => {
+    if (err) {
+        console.error("❌ DB connection failed:", err);
+    } else {
+        console.log("✅ Connected to Railway MySQL");
 
+        db.query(`
+            CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(100) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL
+            )
+        `, (err) => {
+            if (err) console.log("Table creation error:", err);
+            else console.log("✅ Users table ready");
+        });
+    }
+});
 module.exports = db;
