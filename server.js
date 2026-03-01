@@ -23,6 +23,9 @@ app.use("/api", movieRoutes);
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
 
 const PORT = process.env.PORT || 5000;
 
