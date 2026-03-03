@@ -272,3 +272,81 @@ body {
 .rating-box {
     margin-bottom: 15px;
 }
+/* ================= RESPONSIVE MOBILE FIX ================= */
+
+@media (max-width: 1024px) {
+    .movie-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-center {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .category-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .movie-top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-poster-large {
+        width: 180px;
+    }
+
+    .movie-info-side h2 {
+        font-size: 22px;
+    }
+
+    .review-panel {
+        height: 90%;
+        padding: 20px;
+    }
+
+    .container {
+        padding: 1.5rem 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+
+    .movie-poster-large {
+        width: 150px;
+    }
+
+    .hero-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+}
